@@ -1,0 +1,11 @@
+.main-body{
+    background-color: purple;
+    height: 400px;
+    margin: 20px auto;
+}
+.footer{
+    background-color: purple;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+}
