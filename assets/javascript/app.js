@@ -6,7 +6,7 @@ timer = 30;
 gameOver = false;
 
 function init() {
-    // questions = start();
+    
     game = resetGame();
 }
 //question and answers init/declare
@@ -46,7 +46,8 @@ function resetGame () {
     return {
         qAsked: null, //quesitons asked
         score: 0,
-        
+        timer: 30,
+        currentQuestion: 0
     }
 }
 
@@ -58,6 +59,7 @@ function renderScreen() {
     var questionDiv = $("<div class='question col-md-12'>");
     questionDiv.text(progress.question);
     $(".question-area").append(questionDiv);
+    timeStart();
     for (var i = 0; i < progress.answers.length; i++){
          var answerDiv =  $("<div class='answer col-md-12'>");
          var answerButton = $("<button class='choice' button btn-info'>");
@@ -65,6 +67,7 @@ function renderScreen() {
          answerDiv.append(answerButton);
          $(".answer-area").append(answerDiv);
     }
+    window.timeCount = setInterval(timeStart, 1000);
 }
     //randomly render answers
 
@@ -81,6 +84,27 @@ $(document).ready(function(){
 
 
     //timer
+var timeStart = function() {
+    timer--;
+    $("#timer").html("Time remaining: " + "00:" + timer + " secs");
+    
+    if (timer <= 0) {
+        nextQuestion();
+    }
+}
+
+function nextQuestion() {
+    timer = 30;
+    currentQuestion++;
+    clearInterval(window.timeCount);
+
+}
+
+function clearDivs() {
+    $(".question-area").empty();
+    $(".answer-area").empty();
+    $("#timer").empty();
+}
     //incorrect
     //correct
     //reset
