@@ -1,8 +1,7 @@
-//global var
-// var questions = [];
+
 var game;
 currentQuestion = 0;
-timer = 30;
+timer = 10;
 gameOver = false;
 
 function init() {
@@ -46,12 +45,33 @@ function resetGame () {
     return {
         qAsked: null, //quesitons asked
         score: 0,
-        timer: 30,
+        timer: 10,
         currentQuestion: 0
     }
 }
 
+function clearDivs() {
+    $(".question-area").empty();
+    $(".answer-area").empty();
+    $("#timer").empty();
+}
 
+function nextQuestion() {
+    timer = 10;
+    currentQuestion++;
+    clearInterval(window.timeCount);
+    clearDivs();
+    renderScreen();
+}
+
+var timeStart = function() {
+    timer--;
+    $("#timer").html("Time remaining: " + "00:" + timer + " secs");
+    
+    if (timer <= 0) {
+        nextQuestion();
+    } 
+}
 
 //render question 
 function renderScreen() {
@@ -59,7 +79,6 @@ function renderScreen() {
     var questionDiv = $("<div class='question col-md-12'>");
     questionDiv.text(progress.question);
     $(".question-area").append(questionDiv);
-    timeStart();
     for (var i = 0; i < progress.answers.length; i++){
          var answerDiv =  $("<div class='answer col-md-12'>");
          var answerButton = $("<button class='choice' button btn-info'>");
@@ -68,7 +87,10 @@ function renderScreen() {
          $(".answer-area").append(answerDiv);
     }
     window.timeCount = setInterval(timeStart, 1000);
+    timeStart();
 }
+
+
     //randomly render answers
 
 //checking correct
@@ -84,27 +106,10 @@ $(document).ready(function(){
 
 
     //timer
-var timeStart = function() {
-    timer--;
-    $("#timer").html("Time remaining: " + "00:" + timer + " secs");
-    
-    if (timer <= 0) {
-        nextQuestion();
-    }
-}
 
-function nextQuestion() {
-    timer = 30;
-    currentQuestion++;
-    clearInterval(window.timeCount);
 
-}
 
-function clearDivs() {
-    $(".question-area").empty();
-    $(".answer-area").empty();
-    $("#timer").empty();
-}
+
     //incorrect
     //correct
     //reset
