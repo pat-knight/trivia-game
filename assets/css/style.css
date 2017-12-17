@@ -20,3 +20,13 @@
     height: 100px;
     font-size: 2em;
 }
+
+.choice{
+    width: 80%;
+    background-color: green;
+    float: none;
+}
+
+.choice:hover{
+    transform: scale(1.1);
+}

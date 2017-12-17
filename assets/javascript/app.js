@@ -1,8 +1,10 @@
 
 var game;
 currentQuestion = 0;
-timer = 10;
+timer = 20;
 gameOver = false;
+var correct = 0;
+var incorrect = 0;
 
 function init() {
     
@@ -45,7 +47,7 @@ function resetGame () {
     return {
         qAsked: null, //quesitons asked
         score: 0,
-        timer: 10,
+        timer: 20,
         currentQuestion: 0
     }
 }
@@ -57,7 +59,7 @@ function clearDivs() {
 }
 
 function nextQuestion() {
-    timer = 10;
+    timer = 20;
     currentQuestion++;
     clearInterval(window.timeCount);
     clearDivs();
@@ -67,7 +69,6 @@ function nextQuestion() {
 var timeStart = function() {
     timer--;
     $("#timer").html("Time remaining: " + "00:" + timer + " secs");
-    
     if (timer <= 0) {
         nextQuestion();
     } 
@@ -81,16 +82,22 @@ function renderScreen() {
     $(".question-area").append(questionDiv);
     for (var i = 0; i < progress.answers.length; i++){
          var answerDiv =  $("<div class='answer col-md-12'>");
-         var answerButton = $("<button class='choice' button btn-info'>");
+         var answerButton = $("<div class='choice'>");
          answerButton.text(progress.answers[i]);
+         answerButton.attr('data-id', [i]);
          answerDiv.append(answerButton);
          $(".answer-area").append(answerDiv);
-    }
+        //  if (i === progress.correct){
+        //      answerButton.data("id", "right");
+         }
+    
     window.timeCount = setInterval(timeStart, 1000);
     timeStart();
+    // checkAnswer();
 }
 
 
+  
     //randomly render answers
 
 //checking correct
@@ -104,14 +111,16 @@ $(document).ready(function(){
         //start timer
     })
 
-
-    //timer
-
-
-
-
-    //incorrect
-    //correct
+    $(".choice").on('click',function(){
+        var selection = $(this).data("id");
+        var rightChoice = questions[currentQuestion].correct;
+        if (selection !== rightChoice){
+            incorrect++;
+            //change background color  to red
+            //highlight correct answer
+            window.setTimeout(nextQuestion(), 5000);
+        }
+    })
     //reset
     $('#reset-button').on('click.reset',function(){
         clearData();
