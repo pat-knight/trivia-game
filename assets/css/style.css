@@ -4,9 +4,19 @@
     margin: 20px auto;
     padding: 10px;
     float: none;
+    text-align: center;
 }
 .footer{
     background-color: purple;
     height: 100px;
     bottom: 0;
+}
+
+.start {
+    position: relative;
+    margin: auto;
+    top: 50%;    
+    width: 120px;
+    height: 100px;
+    font-size: 2em;
 }
