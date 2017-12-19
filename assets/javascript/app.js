@@ -82,7 +82,8 @@ function renderScreen() {
     $(".question-area").append(questionDiv);
     for (var i = 0; i < progress.answers.length; i++){
          var answerDiv =  $("<div class='answer col-md-12'>");
-         var answerButton = $("<div class='choice'>");
+         var answerButton = $("<button class='choice' onClick='reply_click(this.id)'>");
+         $(".choice").attr("id", i);
          answerButton.text(progress.answers[i]);
          answerButton.attr('data-id', [i]);
          answerDiv.append(answerButton);
@@ -111,7 +112,8 @@ $(document).ready(function(){
         //start timer
     })
 
-    $(".choice").on('click',function(){
+    $(".choice").on("click", function(){
+        console.log(this + " clicked");
         var selection = $(this).data("id");
         var rightChoice = questions[currentQuestion].correct;
         if (selection !== rightChoice){
