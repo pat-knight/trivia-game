@@ -82,7 +82,7 @@ function renderScreen() {
     $(".question-area").append(questionDiv);
     for (var i = 0; i < progress.answers.length; i++){
          var answerDiv =  $("<div class='answer col-md-12'>");
-         var answerButton = $("<button class='choice' onClick='reply_click(this.id)'>");
+         var answerButton = $("<button class='choice'>");
          $(".choice").attr("id", i);
          answerButton.text(progress.answers[i]);
          answerButton.attr('data-id', [i]);
@@ -112,15 +112,23 @@ $(document).ready(function(){
         //start timer
     })
 
-    $(".choice").on("click", function(){
-        console.log(this + " clicked");
+    $(document).on("click", ".choice", function(){ //try changin choice to document here
         var selection = $(this).data("id");
         var rightChoice = questions[currentQuestion].correct;
-        if (selection !== rightChoice){
+        if (selection !== rightChoice){//answer incorrect
+            console.log("incorrect answer");
             incorrect++;
             //change background color  to red
             //highlight correct answer
             window.setTimeout(nextQuestion(), 5000);
+        } else {//answer correct
+            console.log("correct answer");
+            
+            correct++
+            //change background color to green
+            //graphic?
+            window.setTimeout(nextQuestion(), 5000);
+            
         }
     })
     //reset
