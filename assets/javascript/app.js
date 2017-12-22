@@ -20,12 +20,12 @@ var questions = [
 
         },
         {
-            question: 'q',
+            question: '',
             answers: ['z', 'x', 'y', 'c'],
             correct: 3
         },
         {
-            question: 'This former SNL funny man made a cameo as himself in the 2009 film Zombieland:',
+            question: 'This former SNL funny man shows up as himself in the 2009 film Zombieland:',
             answers: ['Norm MacDonald', 'Bill Murray', 'Dan Aykroyd', 'Kevin Nealon'],
             correct: 1
         },
@@ -51,8 +51,8 @@ var questions = [
             correct: 3
         },
         {
-            question: 'q',
-            answers: ['x', 'c', 'y', 'z'],
+            question: 'This comedy duo randomly appears in the 2000 slasher-horror Scream 3',
+            answers: ['Cheech and Chong', 'Jay and Silent Bob', 'The Blues Brothers', 'Penn and Teller'],
             correct: 1
         },
         {
