@@ -142,22 +142,21 @@ $(document).ready(function(){
 
     $(document).on("click", ".choice", function(){ //try changin choice to document here
         var selection = $(this).data("id");
-        (".score-area").html = ("<div class='md-col-5 correct-score'>");
-        (".score-area").html = ("<div class='md-col-5 incorrect-score'>");
+        var correctScore = $(".score-area").html("<div class='md-col-5 correct-score'>");
+        var incorrectScore = $(".score-area").append("<div class='md-col-5 incorrect-score'>");
         var rightChoice = questions[currentQuestion].correct;
         if (selection !== rightChoice){//answer incorrect
             console.log("incorrect answer");
             ansIncorrect++;
             //change background color  to red
             //highlight correct answer
-            window.setTimeout(nextQuestion(), 5000);
+            window.setTimeout(nextQuestion, 5000);
         } else {//answer correct
             console.log("correct answer");
-            
             ansCorrect++
             //change background color to green
             //graphic?
-            window.setTimeout(nextQuestion(), 5000);
+            window.setTimeout(nextQuestion, 5000);
             
         }
     })

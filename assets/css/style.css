@@ -41,6 +41,5 @@
 }
 
 .score-area {
-    display: block;
-    float: left;
+    background-color: #fff;
 }
