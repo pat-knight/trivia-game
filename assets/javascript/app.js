@@ -30,8 +30,8 @@ var questions = [
             correct: 1
         },
         {
-            question: 'q',
-            answers: ['c', 'x', 'y', 'z'],
+            question: 'Which of the following characters was not eaten by a shark in the 1999 film Deep Blue Sea',
+            answers: ['Preacher (LL Cool J)', 'Russell Franklin (Samuel L. Jackson)', 'Tom Scoggins (Michael Rappaport)', 'Dr. Susan McAlester (Saffron Burrows)'],
             correct: 0
         },
         {
@@ -85,13 +85,23 @@ function clearDivs() {
 }
 
 function nextQuestion() {
-    timer = 20;
-    currentQuestion++;
-    $(".correct-score").append(`Correct Answers: ${ansCorrect}`);
-    $(".incorrect-score").append(`Inorrect Answers: ${ansIncorrect}`);
-    clearInterval(window.timeCount);
+    var qCheck = currentQuestion;
+    if (qCheck < 10) {
+        timer = 20;
+        currentQuestion++;
+        $(".correct-score").append(`Correct Answers: ${ansCorrect}`);
+        $(".incorrect-score").append(`Inorrect Answers: ${ansIncorrect}`);
+        clearInterval(window.timeCount);
+        clearDivs();
+        renderScreen();
+    } else {
+        endScreen();
+    }
+}
+
+function endScreen() {
     clearDivs();
-    renderScreen();
+
 }
 
 var timeStart = function() {
@@ -121,12 +131,14 @@ function renderScreen() {
          $(".answer-area").append(answerDiv);
         //  if (i === progress.correct){
         //      answerButton.data("id", "right");
-         }
+        //  }
+        }
     
     window.timeCount = setInterval(timeStart, 1000);
     timeStart();
     // checkAnswer();
 }
+
 
 
   
@@ -145,23 +157,30 @@ $(document).ready(function(){
 
     $(document).on("click", ".choice", function(){ //try changin choice to document here
         var selection = $(this).data("id");
+        var progress = questions[currentQuestion];
         var correctScore = $(".score-area").html("<div class='md-col-5 correct-score'>");
         var incorrectScore = $(".score-area").append("<div class='md-col-5 incorrect-score'>");
         var rightChoice = questions[currentQuestion].correct;
         if (selection !== rightChoice){//answer incorrect
             console.log("incorrect answer");
             ansIncorrect++;
-            $(".timer").empty();                        
+            $("#timer").empty(); //not working
             $(this).toggleClass("wrong");
-            //highlight correct answer
+            // showRight();
+
+            // for (var i = 0; i < progress.answers.length; i++) {
+            //         if (i === rightChoice){
+            //             $(i).toggleClass("right");
+            //         }
+            // }
             window.setTimeout(nextQuestion, 3500);
         } else {//answer correct
             console.log("correct answer");
             ansCorrect++
-            $(".timer").empty();            
+            $("#timer").empty();  //not working   
             $(this).toggleClass("right");//change background color to green
             //graphic?
-            window.setTimeout(nextQuestion, 3500);
+            window.setTimeout(nextQuestion, 1500);
             
         }
     })
