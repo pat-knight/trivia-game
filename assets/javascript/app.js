@@ -3,8 +3,8 @@ var game;
 currentQuestion = 0;
 timer = 20;
 gameOver = false;
-var correct = 0;
-var incorrect = 0;
+var ansCorrect = 0;
+var ansIncorrect = 0;
 
 function init() {
     
@@ -13,6 +13,32 @@ function init() {
 //question and answers init/declare
 
 var questions = [
+        {
+            question: 'q',
+            answers: ['c', 'x', 'y', 'z'],
+            correct: 0
+
+        },
+        {
+            question: 'q',
+            answers: ['z', 'x', 'y', 'c'],
+            correct: 3
+        },
+        {
+            question: 'This former SNL funny man made a cameo as himself in the 2009 film Zombieland:',
+            answers: ['Norm MacDonald', 'Bill Murray', 'Dan Aykroyd', 'Kevin Nealon'],
+            correct: 1
+        },
+        {
+            question: 'q',
+            answers: ['c', 'x', 'y', 'z'],
+            correct: 0
+        },
+        {
+            question: 'q',
+            answers: ['y', 'x', 'c', 'z'],
+            correct: 2
+        },
         {
             question: 'q',
             answers: ['c', 'x', 'y', 'z'],
@@ -61,6 +87,8 @@ function clearDivs() {
 function nextQuestion() {
     timer = 20;
     currentQuestion++;
+    $(".correct-score").append(`Correct Answers: ${ansCorrect}`);
+    $(".incorrect-score").append(`Inorrect Answers: ${ansIncorrect}`);
     clearInterval(window.timeCount);
     clearDivs();
     renderScreen();
@@ -114,17 +142,19 @@ $(document).ready(function(){
 
     $(document).on("click", ".choice", function(){ //try changin choice to document here
         var selection = $(this).data("id");
+        (".score-area").html = ("<div class='md-col-5 correct-score'>");
+        (".score-area").html = ("<div class='md-col-5 incorrect-score'>");
         var rightChoice = questions[currentQuestion].correct;
         if (selection !== rightChoice){//answer incorrect
             console.log("incorrect answer");
-            incorrect++;
+            ansIncorrect++;
             //change background color  to red
             //highlight correct answer
             window.setTimeout(nextQuestion(), 5000);
         } else {//answer correct
             console.log("correct answer");
             
-            correct++
+            ansCorrect++
             //change background color to green
             //graphic?
             window.setTimeout(nextQuestion(), 5000);
