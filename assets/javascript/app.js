@@ -90,7 +90,7 @@ function nextQuestion() {
         timer = 20;
         currentQuestion++;
         $(".correct-score").append(`Correct Answers: ${ansCorrect}`);
-        $(".incorrect-score").append(`Inorrect Answers: ${ansIncorrect}`);
+        $(".incorrect-score").append(`Incorrect Answers: ${ansIncorrect}`);
         clearInterval(window.timeCount);
         clearDivs();
         renderScreen();
@@ -101,7 +101,7 @@ function nextQuestion() {
 
 function endScreen() {
     clearDivs();
-
+    $("#reset-button").show();
 }
 
 var timeStart = function() {

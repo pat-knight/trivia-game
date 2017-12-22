@@ -1,14 +1,30 @@
+body {
+    background-image: url("../images/background.jpg");
+}
 .main-body{
-    background-color: purple;
+    /* background-color: purple; */
     height: 400px;
     margin: 20px auto;
     padding: 10px;
     float: none;
     text-align: center;
+    
+}
+
+.header {
+    background-color: #c7bf57;
+    color: #990dac;
+    font-size: 3em;
+    height: 80px;
+    text-align: center;
+    clear: both;
 }
 .footer{
-    background-color: purple;
-    height: 100px;
+    background-color: #c7bf57;
+    color: #990dac;
+    padding: 18px;
+    text-align: center;
+    height: 50px;
     bottom: 0;
 }
 
@@ -22,16 +38,22 @@
 }
 
 .question-area {
-    background: #fff;
+    background: #c7be57ee;
     text-align: center;
     font-size: 2em;
     width: 85%;
     margin: auto
 }
 
+#timer {
+    background-color: #fab804b7;
+    margin: 5px;
+    width: 22%;
+    margin: auto;
+}
 .choice{
-    width: 80%;
-    background-color: green;
+    width: 60%;
+    background-color: #0d1ad1;
     color: #fff;
     float: none;
     margin: 10px 0;
@@ -52,7 +74,8 @@
 .score-area {
     text-align: center;
     background-color: #c7bf57;
-    color: #ba0bce;
-    width: 80%;
+    font-size: 2em;
+    color: #990dac;
+    width: 30%;
     margin: auto;
 }
