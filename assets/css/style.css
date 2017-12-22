@@ -40,6 +40,18 @@
     transform: scale(1.1);
 }
 
+.wrong {
+    background-color: #dd2200;
+}
+
+.right {
+    background-color: #00bb00;
+}
+
 .score-area {
-    background-color: #fff;
+    text-align: center;
+    background-color: #c7bf57;
+    color: #ba0bce;
+    width: 80%;
+    margin: auto;
 }

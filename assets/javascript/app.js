@@ -98,6 +98,9 @@ var timeStart = function() {
     timer--;
     $("#timer").html("Time remaining: " + "00:" + timer + " secs");
     if (timer <= 0) {
+        $(".correct-score").empty();
+        $(".incorrect-score").empty();
+        ansIncorrect++;
         nextQuestion();
     } 
 }
@@ -148,15 +151,17 @@ $(document).ready(function(){
         if (selection !== rightChoice){//answer incorrect
             console.log("incorrect answer");
             ansIncorrect++;
-            //change background color  to red
+            $(".timer").empty();                        
+            $(this).toggleClass("wrong");
             //highlight correct answer
-            window.setTimeout(nextQuestion, 5000);
+            window.setTimeout(nextQuestion, 3500);
         } else {//answer correct
             console.log("correct answer");
             ansCorrect++
-            //change background color to green
+            $(".timer").empty();            
+            $(this).toggleClass("right");//change background color to green
             //graphic?
-            window.setTimeout(nextQuestion, 5000);
+            window.setTimeout(nextQuestion, 3500);
             
         }
     })
