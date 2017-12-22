@@ -14,14 +14,14 @@ function init() {
 
 var questions = [
         {
-            question: 'q',
-            answers: ['c', 'x', 'y', 'z'],
+            question: 'This actor turned down starring roles in The Matrix, Jurassic Park, The Lord of The Rings, and Die Hard: With a Vengeance:',
+            answers: ['Sean Connery', 'Harrison Ford', 'Tommy Lee Jones', 'Bryan Cranston'],
             correct: 0
 
         },
         {
-            question: '',
-            answers: ['z', 'x', 'y', 'c'],
+            question: 'Which of the following actors did not appear in the 1997 film Anaconda?',
+            answers: ['Ice Cube', 'Jennifer Lopez', 'Danny Trejo', 'Ice-T'],
             correct: 3
         },
         {
@@ -30,24 +30,24 @@ var questions = [
             correct: 1
         },
         {
-            question: 'Which of the following characters was not eaten by a shark in the 1999 film Deep Blue Sea',
+            question: 'Which of the following characters was not eaten by a shark in the 1999 film Deep Blue Sea?',
             answers: ['Preacher (LL Cool J)', 'Russell Franklin (Samuel L. Jackson)', 'Tom Scoggins (Michael Rappaport)', 'Dr. Susan McAlester (Saffron Burrows)'],
             correct: 0
         },
         {
-            question: 'q',
-            answers: ['y', 'x', 'c', 'z'],
+            question: 'In the 1994 film Pulp Fiction, something bad happens every time Vincent Vega (John Travolta) enters:',
+            answers: ['a bar', 'a car', 'a bathroom', 'an office'],
             correct: 2
         },
         {
-            question: 'q',
-            answers: ['c', 'x', 'y', 'z'],
+            question: 'Which actor did not have a drivers license (or even learners permit) before production began on the 2001 film The Fast and the Furious?',
+            answers: ['Michelle Rodriguez', 'Vin Diesel', 'Paul Walker', 'Ja Rule'],
             correct: 0
 
         },
         {
-            question: 'q',
-            answers: ['z', 'x', 'y', 'c'],
+            question: 'In the 1951 film The African Queen, Humphrey Bogart accidentally avoided the sickness which plagued most of the cast and crew by:',
+            answers: ['flying offset for every meal', 'refusing to leave his trailer for  months', 'only eating a steak for every meal', 'only consuming whiskey instead of water'],
             correct: 3
         },
         {
@@ -56,13 +56,13 @@ var questions = [
             correct: 1
         },
         {
-            question: 'q',
-            answers: ['c', 'x', 'y', 'z'],
+            question: 'Which actor wore a wig for every one of his James Bond films?',
+            answers: ['Sean Connery', 'Pierce Brosnan', 'Roger Moore', 'Daniel Craig'],
             correct: 0
         },
         {
-            question: 'q',
-            answers: ['y', 'x', 'c', 'z'],
+            question: 'Although all were considered, James Cameron eventually cast Arnold Schwarzenegger as the Terminator because this frontrunner was "too nice":',
+            answers: ['Tom Selleck', 'Mel Gibson', 'OJ SImpson', 'Michael Douglas'],
             correct: 2
         }
        

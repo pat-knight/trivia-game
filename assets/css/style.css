@@ -32,6 +32,7 @@
 .choice{
     width: 80%;
     background-color: green;
+    color: #fff;
     float: none;
     margin: 10px 0;
 }
