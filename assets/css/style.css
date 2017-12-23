@@ -19,6 +19,7 @@ body {
     text-align: center;
     clear: both;
 }
+
 .footer{
     background-color: #c7bf57;
     color: #990dac;
@@ -53,7 +54,8 @@ body {
 }
 .choice{
     width: 60%;
-    background-color: #0d1ad1;
+    background-color: #0d1ad1a9;
+    border-radius: 5px;
     color: #fff;
     float: none;
     margin: 10px 0;
@@ -69,6 +71,16 @@ body {
 
 .right {
     background-color: #00bb00;
+}
+
+.well-actually {
+    width: 200px;
+    height: 200px;
+    background-color: #69696b;
+    color: #fff;
+    position: absolute;
+    top: 40%;
+    right: 20%;
 }
 
 .score-area {
