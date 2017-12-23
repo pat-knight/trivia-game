@@ -1,5 +1,6 @@
 body {
-    background-image: url("../images/background.jpg");
+    background-image: url("../images/background2.jpg");
+    background-size: cover;
 }
 .main-body{
     /* background-color: purple; */
@@ -12,17 +13,21 @@ body {
 }
 
 .header {
-    background-color: #c7bf57;
-    color: #990dac;
+    /* background: radial-gradient(#432947 5%, #474752 35%, #cacacfdc 60%); */
+    
+    color: #252930;
+    border-radius: 5px;
     font-size: 3em;
     height: 80px;
+    width: 68%;
+    margin: auto;
     text-align: center;
     clear: both;
 }
 
 .footer{
-    background-color: #c7bf57;
-    color: #990dac;
+    background-color: #1a191363;
+    color: #d7c6da;
     padding: 18px;
     text-align: center;
     height: 50px;
@@ -32,6 +37,9 @@ body {
 .start {
     position: relative;
     margin: auto;
+    border-radius: 5px;
+    background-color: #cbce22d5;
+    color: #000;
     top: 50%;    
     width: 120px;
     height: 100px;
@@ -39,7 +47,9 @@ body {
 }
 
 .question-area {
-    background: #c7be57ee;
+    /* background: #3743ec8a; */
+    color: #000;
+    border-radius: 5px;
     text-align: center;
     font-size: 2em;
     width: 85%;
@@ -47,7 +57,7 @@ body {
 }
 
 #timer {
-    background-color: #fab804b7;
+    /* background-color: #fab804b7; */
     margin: 5px;
     width: 22%;
     margin: auto;
@@ -76,18 +86,18 @@ body {
 .well-actually {
     width: 200px;
     height: 200px;
-    background-color: #69696b;
-    color: #fff;
+    /* background-color: #69696b; */
+    color: #000;
     position: absolute;
-    top: 40%;
-    right: 20%;
+    top: 50%;
+    right: 10%;
 }
 
 .score-area {
     text-align: center;
-    background-color: #c7bf57;
+    /* background-color: #c7bf57; */
     font-size: 2em;
-    color: #990dac;
+    color: #000;
     width: 30%;
     margin: auto;
 }

@@ -181,7 +181,7 @@ $(document).ready(function(){
             $("#timer").empty(); //not working
             $(this).toggleClass("wrong");
             $("body").append("<div class='well-actually'>");
-            $(".well-actually").text(`You guessed ${guess}. The Correct answer was ${correction}`)
+            $(".well-actually").text(`You guessed ${guess}. The correct answer was ${correction}`)
 
             // for (var i = 0; i < progress.answers.length; i++) {
             //         if (i === correction){
