@@ -96,7 +96,7 @@ function clearDivs() {
 
 function nextQuestion() {
     var qCheck = currentQuestion;
-    if (qCheck < 10) {
+    if (qCheck = 10) {
         timer = 20;
         currentQuestion++;
         $(".correct-score").append(`Correct Answers: ${ansCorrect}`);
@@ -105,7 +105,10 @@ function nextQuestion() {
         clearDivs();
         renderScreen();
     } else {
+        $("#reset-button").show();
+        
         endScreen();
+
     }
 }
 
@@ -175,6 +178,7 @@ $(document).ready(function(){
         var incorrectScore = $(".score-area").append("<div class='md-col-5 incorrect-score'>");
         var rightChoice = progress.correct;
         var correction = progress.correction;
+        // var correctDiv = $(".choice")[rightChoice];
         if (selection !== rightChoice){//answer incorrect
             console.log("incorrect answer");
             ansIncorrect++;
@@ -182,19 +186,27 @@ $(document).ready(function(){
             $(this).toggleClass("wrong");
             $("body").append("<div class='well-actually'>");
             $(".well-actually").text(`You guessed ${guess}. The correct answer was ${correction}`)
+            $('[data-id~="rightChoice"]').toggleClass("right");
 
             // for (var i = 0; i < progress.answers.length; i++) {
             //         if (i === correction){
             //             $(i).toggleClass("right");
             //         }
             // }
+            // if (currentQuestion = 10) {
+            //     endScreen();
+            // }
             window.setTimeout(nextQuestion, 3500);
+            
         } else {//answer correct
             console.log("correct answer");
             ansCorrect++
             $("#timer").empty();  //not working   
             $(this).toggleClass("right");//change background color to green
             //graphic?
+            // if(currentQuestion = 10){
+            //     endScreen();
+            // }
             window.setTimeout(nextQuestion, 1500);
             
         }
