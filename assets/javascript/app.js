@@ -96,7 +96,8 @@ function clearDivs() {
 
 function nextQuestion() {
     var qCheck = currentQuestion;
-    if (qCheck = 10) {
+    $("main-body").removeClass("well-actually-background");
+    if (qCheck < 10) {
         timer = 20;
         currentQuestion++;
         $(".correct-score").append(`Correct Answers: ${ansCorrect}`);
@@ -106,7 +107,6 @@ function nextQuestion() {
         renderScreen();
     } else {
         $("#reset-button").show();
-        
         endScreen();
 
     }
@@ -142,35 +142,24 @@ function renderScreen() {
          answerButton.attr('data-id', [i]);
          answerDiv.append(answerButton);
          $(".answer-area").append(answerDiv);
-        //  if (i === progress.correct){
+        //  if (i === progress.correct){  
         //      answerButton.data("id", "right");
         //  }
-        }
+        // }
     
     window.timeCount = setInterval(timeStart, 1000);
     timeStart();
     // checkAnswer();
 }
 
-// function showRight(){
-//     for (i = )
-// }
-
-  
-    //randomly render answers
-
-//checking correct
 $(document).ready(function(){
-//onclicks
     //start
     $(".start").on('click', function() {
         $(this).hide();
         renderScreen();
-        //load question
-        //start timer
     })
 
-    $(document).on("click", ".choice", function(){ //try changin choice to document here
+    $(document).on("click", ".choice", function(){ 
         var selection = $(this).data("id");
         var progress = questions[currentQuestion];
         var guess = progress.answers[selection];
@@ -186,16 +175,16 @@ $(document).ready(function(){
             $(this).toggleClass("wrong");
             $("body").append("<div class='well-actually'>");
             $(".well-actually").text(`You guessed ${guess}. The correct answer was ${correction}`)
-            $('[data-id~="rightChoice"]').toggleClass("right");
+            // $("main-body")
+            // $(".main-body").addClass("well-actually-background");
+            $(".choice #[rightChoice]").toggleClass("right");
 
             // for (var i = 0; i < progress.answers.length; i++) {
             //         if (i === correction){
             //             $(i).toggleClass("right");
             //         }
             // }
-            // if (currentQuestion = 10) {
-            //     endScreen();
-            // }
+           
             window.setTimeout(nextQuestion, 3500);
             
         } else {//answer correct

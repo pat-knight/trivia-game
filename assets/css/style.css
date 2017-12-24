@@ -2,6 +2,8 @@ body {
     background-image: url("../images/background2.jpg");
     background-size: cover;
 }
+
+
 .main-body{
     /* background-color: purple; */
     height: 400px;
@@ -86,11 +88,14 @@ body {
 .well-actually {
     width: 200px;
     height: 200px;
-    /* background-color: #69696b; */
     color: #000;
     position: absolute;
     top: 50%;
     right: 10%;
+}
+
+.well-actually-background{
+    background-color: #aac1ff6e;
 }
 
 .score-area {
