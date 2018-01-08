@@ -145,7 +145,7 @@ function renderScreen() {
         //  if (i === progress.correct){  
         //      answerButton.data("id", "right");
         //  }
-        // }
+        }
     
     window.timeCount = setInterval(timeStart, 1000);
     timeStart();
@@ -175,9 +175,9 @@ $(document).ready(function(){
             $(this).toggleClass("wrong");
             $("body").append("<div class='well-actually'>");
             $(".well-actually").text(`You guessed ${guess}. The correct answer was ${correction}`)
-            // $("main-body")
+            // $("main-body").blur();
             // $(".main-body").addClass("well-actually-background");
-            $(".choice #[rightChoice]").toggleClass("right");
+            // $(".choice #[rightChoice]").toggleClass("right");
 
             // for (var i = 0; i < progress.answers.length; i++) {
             //         if (i === correction){
@@ -190,14 +190,9 @@ $(document).ready(function(){
         } else {//answer correct
             console.log("correct answer");
             ansCorrect++
-            $("#timer").empty();  //not working   
+            $("#timer").empty();  //not working
             $(this).toggleClass("right");//change background color to green
-            //graphic?
-            // if(currentQuestion = 10){
-            //     endScreen();
-            // }
             window.setTimeout(nextQuestion, 1500);
-            
         }
     })
     //reset
